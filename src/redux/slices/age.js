@@ -11,9 +11,10 @@ export const slice = createSlice({
     beOneYearOlder: (state) => {
       state.value += 1;
     },
+    noop: () => {},
   },
 });
 
-export const { beOneYearOlder } = slice.actions;
+export const { beOneYearOlder, noop } = slice.actions;
 
 export default slice.reducer;

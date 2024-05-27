@@ -7,7 +7,7 @@ import counter from "./slices/counter";
 
 export const store = configureStore({
   reducer: {
-    age: withUndo({ age }),
+    ...withUndo({ age }),
     counter,
   },
 });
