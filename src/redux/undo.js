@@ -8,7 +8,7 @@ export const withUndo = (namedReducer) => {
 
     const _slice = reducer(slice, action);
 
-    if (_sliceName !== sliceName) return _slice;
+    if (_sliceName !== sliceName) return _slice; // if not our slice, pass through
 
     if (_reducerName === "$UNDO") return sliceHistory.pop();
 

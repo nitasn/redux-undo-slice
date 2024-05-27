@@ -1,9 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-
-import { withUndo } from "./undo";
-
 import age from "./slices/age";
 import counter from "./slices/counter";
+import { withUndo } from "./undo";
 
 export const store = configureStore({
   reducer: {

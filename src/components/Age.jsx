@@ -1,7 +1,7 @@
-import { useSelector, useDispatch } from "react-redux";
-import { beOneYearOlder, noop } from "../redux/slices/age";
-import { undoSlice } from "../redux/undo";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { beOneYearOlder } from "../redux/slices/age";
+import { undoSlice } from "../redux/undo";
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,7 +20,7 @@ export function Age() {
       <button onClick={() => dispatch(beOneYearOlder())}>Grow Older</button>
       <span>Age: {value}</span>
       <button onClick={() => dispatch(undoSlice("age"))} disabled={!$HAS_HISTORY}>Undo</button>
-      {/* <button onClick={() => dispatch(noop())}>NoOp</button> */}
     </Wrapper>
   );
 }
+
