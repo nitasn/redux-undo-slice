@@ -1,20 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import { 
-  persist, 
-  persistenceMiddleware, 
-  LoadSlicesFromLocalStorage 
-} from "persist-redux-slice";
+import { withUndo } from "./undo";
 
+import age from "./slices/age";
 import counter from "./slices/counter";
 
 export const store = configureStore({
   reducer: {
-    counter: persist({ counter }),
-  },
-  middleware: (getDefaultMiddleware) => {
-    return getDefaultMiddleware().concat(persistenceMiddleware);
+    age: withUndo({ age }),
+    counter,
   },
 });
-
-store.dispatch(LoadSlicesFromLocalStorage);
