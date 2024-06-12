@@ -1,5 +1,6 @@
 import { Age } from "./components/Age";
 import styled from "styled-components";
+import { Counter } from "./components/Counter";
 
 const Wrapper = styled.div`
   margin: 0;
@@ -15,6 +16,7 @@ export default function App() {
   return (
     <Wrapper>
       <Age />
+      <Counter />
     </Wrapper>
   );
 }
