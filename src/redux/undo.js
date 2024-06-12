@@ -1,4 +1,4 @@
-export const withUndo = (namedReducer) => {
+export const withUndo = (namedReducer, { ignore = {} } = {}) => {
   const [[sliceName, reducer]] = Object.entries(namedReducer);
 
   const sliceHistory = [];
@@ -12,7 +12,10 @@ export const withUndo = (namedReducer) => {
 
     if (_reducerName === "$UNDO") return sliceHistory.pop();
 
-    if (slice !== _slice) sliceHistory.push(slice); // some reducers don't mutate (e.g. getters)
+    // check if slice was mutated, as some reducers don't mutate (e.g. getters)
+    if (slice !== _slice && !(_reducerName in ignore)) {
+      sliceHistory.push(slice);
+    }
 
     return { ..._slice, $HAS_HISTORY: sliceHistory.length > 0 };
   };
