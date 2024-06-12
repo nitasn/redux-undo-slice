@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { beOneYearOlder, growTinyFraction } from "../redux/slices/age";
+import { growOneYearOlder, growTinyFraction } from "../redux/slices/age";
 import { undoSlice } from "../redux/undo";
 
 const Wrapper = styled.div`
@@ -17,7 +17,7 @@ export function Age() {
 
   return (
     <Wrapper>
-      <button onClick={() => dispatch(beOneYearOlder())}>Grow 1 Year Older</button>
+      <button onClick={() => dispatch(growOneYearOlder())}>Grow 1 Year Older</button>
       <button onClick={() => dispatch(growTinyFraction())}>Grow By Insgnificant Fraction</button>
       <span>Age: {value}</span>
       <button onClick={() => dispatch(undoSlice("age"))} disabled={!$HAS_HISTORY}>Undo</button>

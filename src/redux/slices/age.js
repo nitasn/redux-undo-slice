@@ -8,7 +8,7 @@ export const slice = createSlice({
   name: "age",
   initialState,
   reducers: {
-    beOneYearOlder: (state) => {
+    growOneYearOlder: (state) => {
       state.value = Math.floor(state.value) + 1;
     },
     growTinyFraction: (state) => {
@@ -21,6 +21,6 @@ export const slice = createSlice({
   },
 });
 
-export const { beOneYearOlder, growTinyFraction } = slice.actions;
+export const { growOneYearOlder, growTinyFraction } = slice.actions;
 
 export default slice.reducer;
