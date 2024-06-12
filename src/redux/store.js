@@ -6,7 +6,9 @@ import { growTinyFraction } from "./slices/age";
 
 export const store = configureStore({
   reducer: {
-    ...withUndo({ age }, { ignore: { growTinyFraction } }),
+    ...withUndo({ age }, 
+      // { ignore: { growTinyFraction } }
+    ),
     counter,
   },
 });
