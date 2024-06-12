@@ -9,12 +9,18 @@ export const slice = createSlice({
   initialState,
   reducers: {
     beOneYearOlder: (state) => {
-      state.value += 1;
+      state.value = Math.floor(state.value) + 1;
     },
-    noop: () => {},
+    growTinyFraction: (state) => {
+      if (state.value === Math.round(state.value)) {
+        state.value += 0.1;
+      } else {
+        state.value = Number(String(state.value) + "1");
+      }
+    },
   },
 });
 
-export const { beOneYearOlder, noop } = slice.actions;
+export const { beOneYearOlder, growTinyFraction } = slice.actions;
 
 export default slice.reducer;
