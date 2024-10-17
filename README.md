@@ -1,3 +1,5 @@
+# Redux Undo Slice
+
 Add `undo` functionality to your existing redux slice.
 
 ![show case](github-assets/screen-recording.gif)
