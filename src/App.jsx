@@ -7,16 +7,26 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  min-width: 320px;
   min-height: 100vh;
+  max-width: fit-content;
+  margin-inline: auto;
+  gap: 3rem;
+`;
+
+const Exampler = styled.div`
+  border: 1px solid #797979;
+  border-radius: 5px;
 `;
 
 export default function App() {
   return (
     <Wrapper>
-      <Age />
-      <Counter />
+      <Exampler>
+        <Counter />
+      </Exampler>
+      <Exampler>
+        <Age />
+      </Exampler>
     </Wrapper>
   );
 }
