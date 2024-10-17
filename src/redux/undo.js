@@ -31,5 +31,5 @@ export const withUndo = (namedReducer, { ignore = {} } = {}) => {
 };
 
 export function undoSlice(sliceName) {
-  return { type: `${sliceName}/$UNDO` };
+  return { type: sliceName + '/$UNDO' };
 }
